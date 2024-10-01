@@ -4,8 +4,7 @@ const searchButton = document.getElementById('searchButton');
 const searchInput = document.getElementById('search');
 
 async function fetchNews(query = '') {
-    const url = `https://newsapi.org/v2/top-headlines?country=us&q=${query}&apiKey=${apiKey}`;
-    const response = await fetch(url);
+    const response = await fetch('news.json');
     const data = await response.json();
     displayNews(data.articles);
 }
